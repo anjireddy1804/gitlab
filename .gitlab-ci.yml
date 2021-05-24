@@ -41,7 +41,7 @@ Nexus:
   tags:
   - k8
   script:
-    - mvn deploy
+    - mvn deploy --settings settings.xml
 
 docker:
   stage: image-build
