@@ -15,21 +15,12 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-</project>
-
-<project>
-
-...
- <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url> http://ec2-18-212-121-17.compute-1.amazonaws.com/:8081/repository/maven-snapshots </url>
-    </snapshotRepository>
-    <repository>
-      <id>nexus-releases</id>
-      <url> http://ec2-18-212-121-17.compute-1.amazonaws.com/:8081/repository/maven-releases </url>
-    </repository>
-  </distributionManagement>
+<distributionManagement>
+  <repository>
+    <id>releases</id>
+        <url>http://ec2-18-212-121-17.compute-1.amazonaws.com/:8081/repository/maven-releases</url>
+  </repository>
+</distributionManagement>
 </project>
 
 
