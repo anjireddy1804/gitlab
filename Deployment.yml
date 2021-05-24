@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: web-server
-        image: 
+        image: anjreddy/wipro:latest
         ports:
         - containerPort: 80
 
