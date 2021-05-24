@@ -1,6 +1,3 @@
-tags:
-  - k8
-
 stages:
   - compile
   - test
@@ -12,36 +9,50 @@ stages:
 
 compile:
   stage: compile
+  tags:
+  - k8
   script:
     - mvn compile
 
 test:
   stage: test
+  tags:
+  - k8
   script:
     - mvn test
 
 build:
   stage: build
+  tags:
+  - k8
   script:
     - mvn package -Dmaven.test.skip=true
 
 
 sonar:
   stage: code_quality
+  tags:
+  - k8
   script:
     - mvn sonar:sonar -Dsonar.host.url=http://ec2-18-212-121-17.compute-1.amazonaws.com:9000  -Dsonar.login=6b2a5591e54dc65356961719918f6af2edf0a3d7
 
 Nexus:
   stage: artifacts
+  tags:
+  - k8
   script:
     - mvn deploy
 
 docker:
   stage: image-build
+  tags:
+  - k8
   script:
     - docker build -it .
 
 Kubernetes:
   stage: deploy
+  tags:
+  - k8
   script:
     - kubectl apply -f deployment.yml
