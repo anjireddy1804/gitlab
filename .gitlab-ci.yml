@@ -1,0 +1,32 @@
+image: maven:latest
+
+stages:
+  - compile
+  - test
+  - build
+  - code_quality
+  - artifacts
+  - image-build
+  - deploy-prod
+
+compile:
+  stage: compile
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  script:
+    - mvn test
+
+build:
+  stage: build
+  script:
+    - mvn package -Dmaven.test.skip=true
+
+image: sonarqube:8.2-community
+
+sonar:
+  stage: code_quality
+  script:
+    - 
