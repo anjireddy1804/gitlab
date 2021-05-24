@@ -18,7 +18,7 @@
 <distributionManagement>
   <repository>
     <id>releases</id>
-        <url>http://ec2-18-212-121-17.compute-1.amazonaws.com/:8081/repository/maven-releases</url>
+        <url>http://ec2-18-212-121-17.compute-1.amazonaws.com/:8081/nexus</url>
   </repository>
 </distributionManagement>
 <settings>
