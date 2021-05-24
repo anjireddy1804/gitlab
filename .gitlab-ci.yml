@@ -1,4 +1,5 @@
-image: maven:latest
+tags:
+  - k8
 
 stages:
   - compile
@@ -7,7 +8,7 @@ stages:
   - code_quality
   - artifacts
   - image-build
-  - deploy-prod
+  - deploy
 
 compile:
   stage: compile
@@ -36,3 +37,13 @@ Nexus:
   stage: artifacts
   script:
     - mvn deploy
+
+docker:
+  stage: image-build
+  script:
+    - docker build -it .
+
+Kubernetes:
+  stage: deploy
+  script:
+    - kubectl apply -f deployment.yml
