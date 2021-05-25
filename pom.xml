@@ -17,8 +17,8 @@
   </dependencies>
 <distributionManagement>
   <repository>
-    <id>Releases</id>
-        <url>http://ec2-18-212-121-17.compute-1.amazonaws.com:8081/nexus/content/repositories/releases</url>
+    <id>releases</id>
+    <url>http://ec2-18-212-121-17.compute-1.amazonaws.com:8081/nexus/content/repositories/releases</url>
   </repository>
 </distributionManagement>
 </project>
