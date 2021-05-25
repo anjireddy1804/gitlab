@@ -61,7 +61,8 @@ deploy-prod:
   only:
     - master
   when: manual
-  script: kubectl apply -f deployment.yaml
+  script: 
+    - kubectl apply -f deployment.yaml
   
 
    
