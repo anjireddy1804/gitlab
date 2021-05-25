@@ -55,10 +55,12 @@ nexus:
   script:
    - mvn deploy
 
-deploy:
+deploy-prod:
+  image: bitnami/kubectl:latest
   stage: deploy
-  tags:
-  - allinone
+  only:
+    - master
+  when: manual
   script: kubectl apply -f deployment.yaml
   
 
