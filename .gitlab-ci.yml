@@ -36,12 +36,12 @@ sonar:
   script:
     - mvn sonar:sonar -Dsonar.host.url=http://ec2-18-212-121-17.compute-1.amazonaws.com:9000  -Dsonar.login=6b2a5591e54dc65356961719918f6af2edf0a3d7
 
-Nexus:
-  stage: artifacts
-  tags:
-  - k8
-  script:
-    - mvn deploy
+#Nexus:
+#  stage: artifacts
+ # tags:
+  #- k8
+  #script:
+   # - mvn deploy
 
 docker:
   stage: image-build
