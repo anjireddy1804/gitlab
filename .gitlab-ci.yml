@@ -56,15 +56,14 @@ nexus:
    - mvn deploy
 
 deploy-prod:
-  image:
-    name: bitnami/kubectl:1.14
-    entrypoint: [""]
   stage: deploy
+  tags:
+  - allinone
   only:
     - master
   when: manual
   script: 
-    - kubectl apply -f deployment.yaml
+    - kubectl apply -f deployment.yaml 
   
 
    
