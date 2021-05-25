@@ -1,6 +1,6 @@
 FROM tomcat:8.0-alpine
 
-ADD webapp-5.0.war /usr/local/tomcat/webapps/
+ADD webapp-7.0.war /usr/local/tomcat/webapps/
 
 LABEL maintainer=”deepak@softwareyoga.com”
 
