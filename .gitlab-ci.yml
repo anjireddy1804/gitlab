@@ -55,9 +55,8 @@ nexus:
   script:
    - mvn deploy
 
-Kubernetes:
+configure production cluster:
   stage: deploy
-  tags:
-  - allinone
-  script:
-    - kubectl apply -f deployment.yml
+  script: kubectl apply -f deployment.yaml
+  environment:
+    name: production
