@@ -34,7 +34,7 @@ build:
 docker:
   stage: image-build
   tags:
-  - k8
+  - allinone
   script:
     - docker login --username=anjreddy --password=Adiyog!@112
     - docker build -t anjreddy/wipro:latest .
