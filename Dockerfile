@@ -1,7 +1,7 @@
 FROM tomcat:8.0-alpine
 
-ADD *.war /usr/local/tomcat/webapps/
+COPY *.war /usr/local/tomcat/webapps/
 
-EXPOSE 8080
+EXPOSE 32000
 
 CMD [“catalina.sh”, “run”]
