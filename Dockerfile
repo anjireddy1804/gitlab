@@ -1,6 +1,8 @@
 FROM tomcat:8.0-alpine
 
-COPY *.war /usr/local/tomcat/webapps/
+ADD webapps.war /usr/local/tomcat/webapps/
+
+LABEL maintainer=”deepak@softwareyoga.com”
 
 EXPOSE 32000
 
