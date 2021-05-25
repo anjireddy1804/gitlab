@@ -57,8 +57,10 @@ nexus:
 
 deploy:
   stage: deploy
+  tags:
+  - allinone
   script: kubectl apply -f deployment.yaml
-  environment:
-    name: production
-    kubernetes:
-      namespace: production
+  
+
+   
+    
