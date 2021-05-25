@@ -58,7 +58,7 @@ nexus:
 deploy-prod:
   stage: deploy
   tags:
-  - allinone
+  - k8
   only:
     - master
   when: manual
