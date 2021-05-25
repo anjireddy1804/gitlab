@@ -4,7 +4,7 @@
   <groupId>com.ravi.web</groupId>
   <artifactId>webapp</artifactId>
   <packaging>war</packaging>
-  <version>9.0</version>
+  <version>0.0.1</version>
   <name>webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
