@@ -55,8 +55,10 @@ nexus:
   script:
    - mvn deploy
 
-configure production cluster:
+deploy:
   stage: deploy
   script: kubectl apply -f deployment.yaml
   environment:
-    name: test.k8s.local
+    name: production
+    kubernetes:
+      namespace: production
