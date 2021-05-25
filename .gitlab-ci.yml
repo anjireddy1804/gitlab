@@ -2,52 +2,34 @@ stages:
   - compile
   - test
   - build
+  - image-build
   - code_quality
   - artifacts
-  - image-build
   - deploy
 
 compile:
   stage: compile
   tags:
-  - k8
+  - allinone
   script:
     - mvn compile
 
 test:
   stage: test
   tags:
-  - k8
+  - allinone
   script:
     - mvn test
 
 build:
   stage: build
   tags:
-  - k8
+  - allinone
   script:
     - mvn package -Dmaven.test.skip=true
   artifacts:
    paths:
    - target/*.war
-
-
-sonar:
-  stage: code_quality
-  tags:
-  - k8
-  script:
-    - mvn sonar:sonar -Dsonar.host.url=http://ec2-18-212-121-17.compute-1.amazonaws.com:9000  -Dsonar.login=6b2a5591e54dc65356961719918f6af2edf0a3d7
-
-#Nexus:
-#  stage: artifacts
- # tags:
-  #- k8
-  #script:
-   # - mvn deploy
-
-
-
 
 docker:
   stage: image-build
@@ -59,10 +41,23 @@ docker:
     - docker push anjreddy/wipro:latest
 
 
+sonar:
+  stage: code_quality
+  tags:
+  - allinone
+  script:
+    - mvn sonar:sonar -Dsonar.host.url=http://ec2-34-229-119-25.compute-1.amazonaws.com:9000 -Dsonar.    login=93fb8a0ea73e3ed4a74bc4440cb6190ce82d900d
+
+nexus:
+  stage: artifacts
+  tags:
+  - allinone
+  script:
+   - mvn deploy
 
 Kubernetes:
   stage: deploy
   tags:
-  - k8
+  - allinone
   script:
     - kubectl apply -f deployment.yml
