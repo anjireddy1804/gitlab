@@ -46,7 +46,7 @@ sonar:
   tags:
   - allinone
   script:
-    - mvn sonar:sonar -Dsonar.host.url=http://ec2-34-229-119-25.compute-1.amazonaws.com:9000 -Dsonar.    login=93fb8a0ea73e3ed4a74bc4440cb6190ce82d900d
+    - mvn sonar:sonar -Dsonar.host.url=http://ec2-34-229-119-25.compute-1.amazonaws.com:9000 -Dsonar.login=93fb8a0ea73e3ed4a74bc4440cb6190ce82d900d
 
 nexus:
   stage: artifacts
