@@ -27,6 +27,9 @@ build:
   - k8
   script:
     - mvn package -Dmaven.test.skip=true
+  artifacts:
+   paths:
+   - target/*.war
 
 
 sonar:
@@ -42,6 +45,9 @@ sonar:
   #- k8
   #script:
    # - mvn deploy
+
+
+
 
 docker:
   stage: image-build
