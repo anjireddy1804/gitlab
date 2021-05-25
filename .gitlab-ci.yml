@@ -59,4 +59,4 @@ configure production cluster:
   stage: deploy
   script: kubectl apply -f deployment.yaml
   environment:
-    name: production
+    name: test.k8s.local
