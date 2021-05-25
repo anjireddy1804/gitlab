@@ -21,4 +21,4 @@
     <url>http://ec2-34-229-119-25.compute-1.amazonaws.com:8081/nexus/content/repositories/releases</url>
   </repository>
 </distributionManagement>
-<project>
+</project>
