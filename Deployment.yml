@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-server
+  name: java-server
   labels:
-    app: app-server
+    app: java-server
 spec:
   selector:
     matchLabels:
-      app: app-server
+      app: java-server
   template:
     metadata:
       labels:
-        app: app-server
+        app: java-server
     spec:
       containers:
-      - name: web-server
+      - name: java-server
         image: anjreddy/wipro:latest
         ports:
         - containerPort: 8080
@@ -24,12 +24,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-service
+  name: java-service
 spec:
   type: NodePort
   ports:
-    - nodePort: 8080
-      port: 8080
+    - nodePort: 9090
+      port: 80
       targetPort: 8080
   selector:
-    app: app-server
+    app: java-server
