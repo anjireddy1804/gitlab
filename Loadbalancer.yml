@@ -7,7 +7,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 32000
+  - port: 80
+    targetport: 8080
   selector:
     app: java
 ---
@@ -34,3 +35,5 @@ spec:
       containers:
       - name: frontend-container
         image: anjreddy/wipro:latest
+        port:
+          - containerport: 8080
