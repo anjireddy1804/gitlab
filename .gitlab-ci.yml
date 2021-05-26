@@ -36,6 +36,7 @@ docker:
   tags:
   - allinone
   script:
+    - ls
     - docker login --username=anjreddy --password=Adiyog!@112
     - docker build -t anjreddy/wipro:latest .
     - docker push anjreddy/wipro:latest
