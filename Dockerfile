@@ -1,7 +1,4 @@
-FROM tomcat:8.0-alpine
+FROM tomcat:8.0.20-jre8
 
 ADD . /usr/local/tomcat/webapps/
 
-LABEL maintainer=”deepak@softwareyoga.com”
-
-CMD [“catalina.sh”, “run”]
