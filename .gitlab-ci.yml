@@ -27,10 +27,7 @@ build:
   - allinone
   script:
     - mvn package -Dmaven.test.skip=true
-  artifacts:
-   paths:
-   - target/webapp.war
-
+  
 docker:
   stage: image-build
   tags:
