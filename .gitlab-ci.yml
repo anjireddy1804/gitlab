@@ -58,7 +58,7 @@ sonar:
 deploy-prod:
   stage: deploy
   tags:
-  - allinone
+  - k8
   only:
     - master
   script: 
