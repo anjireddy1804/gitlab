@@ -64,7 +64,6 @@ deploy-prod:
   - k8
   only:
     - master
-  when: manual
   script: 
     - kubectl apply -f deployment.yaml 
   
