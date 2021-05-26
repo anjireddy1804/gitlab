@@ -4,7 +4,7 @@ Java Application
 </title>
 <body>
 <center>
-<h1>Sample Java Web Application</h1>
+<h1>Sample wipro java Application</h1>
   <br>
   <h2>Welcome to Wipro</h2>
   </br>
