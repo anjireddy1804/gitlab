@@ -64,7 +64,7 @@ deploy-prod:
     - master
   script: 
     - pwd
-    - kubectl apply -f deployment.yaml 
+    - kubectl apply -f Deployment.yml 
   
 
    
