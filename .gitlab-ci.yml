@@ -29,7 +29,7 @@ build:
     - mvn package -Dmaven.test.skip=true
   artifacts:
    paths:
-   - target/*.war
+   - target/webapp.war
 
 docker:
   stage: image-build
