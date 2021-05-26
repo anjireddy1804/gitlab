@@ -18,7 +18,7 @@ spec:
         image: anjreddy/wipro:latest
         ports:
         - containerPort: 8080
-
+          
 ---
 
 apiVersion: v1
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - nodePort: 9090
+    - nodePort: 32001
       port: 80
       targetPort: 8080
   selector:
