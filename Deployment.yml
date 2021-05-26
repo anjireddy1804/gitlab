@@ -17,7 +17,7 @@ spec:
       - name: web-server
         image: anjreddy/wipro:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 
@@ -28,8 +28,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - nodePort: 32000
-      port: 80
-      targetPort: 80
+    - nodePort: 8080
+      port: 8080
+      targetPort: 8080
   selector:
     app: app-server
