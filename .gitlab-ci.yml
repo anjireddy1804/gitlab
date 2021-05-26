@@ -49,12 +49,12 @@ sonar:
   script:
     - mvn sonar:sonar -Dsonar.host.url=http://34.229.119.25:9000 -Dsonar.login=37e516b7aa7cbebcdf761996af4fd158a7f58c97
 
-#nexus:
-  #stage: artifacts
-  #tags:
-  #- allinone
-  #script:
-   #- mvn deploy
+nexus:
+  stage: artifacts
+  tags:
+  - allinone
+  script:
+   - mvn deploy
 
 
 deploy-prod:
