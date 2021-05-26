@@ -8,7 +8,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-selector:
+  selector:
     app: java
 ---
 apiVersion: apps/v1
