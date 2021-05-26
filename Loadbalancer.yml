@@ -8,8 +8,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetport: 8080
-  selector:
+selector:
     app: java
 ---
 apiVersion: apps/v1
@@ -35,5 +34,4 @@ spec:
       containers:
       - name: frontend-container
         image: anjreddy/wipro:latest
-        port:
-          - containerport: 8080
+        
