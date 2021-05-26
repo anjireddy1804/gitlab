@@ -27,7 +27,10 @@ build:
   - allinone
   script:
     - mvn package -Dmaven.test.skip=true
-  
+  artifacts:
+   paths:
+   - target/*.war
+
 docker:
   stage: image-build
   tags:
