@@ -64,7 +64,7 @@ deploy-prod:
   only:
     - master
   script: 
-    - kubectl apply -f Loadbalancer.yml
+    - kubectl apply -f Deployment.yml
   
 
    
