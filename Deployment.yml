@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: java-server
-        image: nginx
+        image: anjreddy/wipro:latest
         ports:
         - containerPort: 8080
          
