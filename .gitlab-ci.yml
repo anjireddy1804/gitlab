@@ -10,21 +10,21 @@ stages:
 compile:
   stage: compile
   tags:
-  - allinone
+  - minikube
   script:
     - mvn compile
 
 test:
   stage: test
   tags:
-  - allinone
+  - minikube
   script:
     - mvn test
 
 build:
   stage: build
   tags:
-  - allinone
+  - minikube
   script:
     - mvn package -Dmaven.test.skip=true
   artifacts:
@@ -34,7 +34,7 @@ build:
 docker:
   stage: image-build
   tags:
-  - allinone
+  - minikube
   script:
     - ls
     - docker login --username=anjreddy --password=Adiyog!@112
@@ -45,14 +45,14 @@ docker:
 sonar:
   stage: code_quality
   tags:
-  - allinone
+  - minikube
   script:
     - mvn sonar:sonar -Dsonar.host.url=http://34.229.119.25:9000 -Dsonar.login=37e516b7aa7cbebcdf761996af4fd158a7f58c97
 
 nexus:
   stage: artifacts
   tags:
-  - allinone
+  - minikube
   script:
    - mvn deploy
 
@@ -60,7 +60,7 @@ nexus:
 deploy-prod:
   stage: deploy
   tags:
-  - k8
+  - minikube
   only:
     - master
   script: 
