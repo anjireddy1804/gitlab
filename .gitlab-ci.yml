@@ -64,9 +64,7 @@ deploy-prod:
   only:
     - master
   script: 
-    - kubectl delete --all deployments --namespace=default
-    - kubectl delete --all svc --namespace=default
-    - kubectl apply -f Deployment.yml
+    - kubectl apply -f Loadbalancer.yml
   
 
    
