@@ -7,8 +7,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 90
-    targetport: 9090
+  - port: 80
   selector:
     app: java
 ---
