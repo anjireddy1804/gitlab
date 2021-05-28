@@ -47,7 +47,7 @@ sonar:
   tags:
   - minikube
   script:
-    - mvn sonar:sonar -Dsonar.host.url=http://34.229.119.25:9000 -Dsonar.login=37e516b7aa7cbebcdf761996af4fd158a7f58c97
+    - mvn sonar:sonar -Dsonar.host.url=http://3.238.155.101:9000 -Dsonar.login=15fe0f25cc72bf6c1fb02bdcc9124b379ff793a5
 
 nexus:
   stage: artifacts
