@@ -60,7 +60,7 @@ nexus:
 deploy-prod:
   stage: deploy
   tags:
-  - minicluster
+  - minikube
   only:
     - master
   script: 
