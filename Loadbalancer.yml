@@ -1,25 +1,25 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-service
+  name: wipro-serive
   labels:
-    app: java-service
+    app: wipro-serive
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 8080
   selector:
-    app: java
+    app: wipro
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java
+  name: wipro
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: java
+      app: wipro
   minReadySeconds: 30
   strategy:
     type: RollingUpdate
@@ -29,9 +29,9 @@ spec:
   template:
     metadata:
       labels:
-        app: java
+        app: wipro
     spec:
       containers:
-      - name: java
+      - name: wipro
         image: anjreddy/wipro:latest
         
