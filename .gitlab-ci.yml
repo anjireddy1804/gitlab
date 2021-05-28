@@ -64,7 +64,7 @@ deploy-prod:
   only:
     - master
   script: 
-    - sudo kubectl apply -f Deployment.yml
+    - echo 1234 | sudo -S kubectl apply -f Deployment.yml
   
 
    
