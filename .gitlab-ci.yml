@@ -13,8 +13,9 @@ compile:
   - minikube
   script:
     - mvn compile
-  only:
-    - manual
+  rules:
+    - when: manual
+
 
 test:
   stage: test
