@@ -1,0 +1,6 @@
+sonar:
+  stage: code_quality
+  tags:
+  - minikube
+  script:
+    - mvn sonar:sonar -Dsonar.host.url=http://3.238.155.101:9000 -Dsonar.login=15fe0f25cc72bf6c1fb02bdcc9124b379ff793a5

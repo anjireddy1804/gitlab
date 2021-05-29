@@ -1,0 +1,6 @@
+nexus:
+  stage: artifacts
+  tags:
+  - minikubedev
+  script:
+   - mvn deploy

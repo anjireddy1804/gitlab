@@ -1,0 +1,9 @@
+build:
+  stage: build
+  tags:
+  - minikubedev
+  script:
+    - mvn package -Dmaven.test.skip=true
+  artifacts:
+   paths:
+   - target/*.war

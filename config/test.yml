@@ -1,0 +1,6 @@
+test:
+  stage: test
+  tags:
+  - minikube
+  script:
+    - mvn test
