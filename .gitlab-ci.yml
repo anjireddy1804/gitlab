@@ -13,6 +13,8 @@ compile:
   - minikube
   script:
     - mvn compile
+  only:
+    - manual
 
 test:
   stage: test
