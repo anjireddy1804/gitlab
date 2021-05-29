@@ -4,6 +4,6 @@ docker:
   - minikube
   script:
     - ls
-    - docker login --username=anjreddy --password=Adiyog!@112
+    - docker login --username=$dockeruser --password=$dockerpassword
     - docker build -t anjreddy/wipro:latest .
     - docker push anjreddy/wipro:latest

@@ -7,68 +7,13 @@ stages:
   - artifacts
   - deploy
 
-compile:
-  stage: compile
-  tags:
-  - minikube
-  script:
-    - mvn compile
-  rules:
-    - when: manual
-
-
-test:
-  stage: test
-  tags:
-  - minikube
-  script:
-    - mvn test
-
-build:
-  stage: build
-  tags:
-  - minikube
-  script:
-    - mvn package -Dmaven.test.skip=true
-  artifacts:
-   paths:
-   - target/*.war
-
-docker:
-  stage: image-build
-  tags:
-  - minikube
-  script:
-    - ls
-    - docker login --username=anjreddy --password=Adiyog!@112
-    - docker build -t anjreddy/wipro:latest .
-    - docker push anjreddy/wipro:latest
-
-
-sonar:
-  stage: code_quality
-  tags:
-  - minikube
-  script:
-    - mvn sonar:sonar -Dsonar.host.url=http://3.238.155.101:9000 -Dsonar.login=15fe0f25cc72bf6c1fb02bdcc9124b379ff793a5
-
-nexus:
-  stage: artifacts
-  tags:
-  - minikube
-  script:
-   - mvn deploy
-
-
-deploy-prod:
-  stage: deploy
-  tags:
-  - minikube
-  only:
-    - master
-  script: 
-    - echo 1234 | sudo -S kubectl apply -f Deployment.yml
-  
-
+include:
+   - local: /config/compile.yml
+   - local: /config/test.yml
+   - local: /config/build.yml
+   - local: /config/image-build.yml
+   - local: /config/code_quality.yml
+   - local: /config/artifacts.yml
+   - local: /config/deploy.yml
    
     
