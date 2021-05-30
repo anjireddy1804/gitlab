@@ -12,6 +12,12 @@ spec:
     metadata:
       labels:
         app: java-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
     spec:
       containers:
       - name: java-server
