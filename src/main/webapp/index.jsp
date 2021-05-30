@@ -6,7 +6,7 @@ Java Application
 <center>
 <h1>Sample wipro java Application</h1>
   <br>
-  <h2>Welcome to telefonica</h2>
+  <h2>Welcome to wipro world</h2>
   </br>
 </center>
 </body>
