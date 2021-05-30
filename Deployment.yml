@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: java-server
-        image: anjreddy/wipro:"($version)"
+        image: anjreddy/wipro:3.0.6
         ports:
         - containerPort: 8080        
 ---
