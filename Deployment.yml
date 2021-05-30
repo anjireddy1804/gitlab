@@ -2,29 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: java-server
-  labels:
-    app: java-server
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: java-server
-  template:
-    metadata:
-      labels:
-        app: java-server
+  minReadySeconds: 30
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
-
+  template:
+    metadata:
+      labels:
+        app: java-server
     spec:
       containers:
       - name: java-server
         image: anjreddy/wipro:latest
         ports:
-        - containerPort: 8080
-         
+        - containerPort: 8080        
 ---
 
 apiVersion: v1
