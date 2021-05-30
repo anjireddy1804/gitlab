@@ -5,5 +5,5 @@ docker:
   script:
     - ls
     - docker login --username=$dockeruser --password=$dockerpassword
-    - docker build -t anjreddy/wipro:latest .
+    - docker build -t anjreddy/wipro:$version .
     - docker push anjreddy/wipro:latest
